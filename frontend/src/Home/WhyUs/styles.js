@@ -8,6 +8,14 @@ export default makeStyles((theme) => ({
         alignItems: "center",
         justifyContent: "center"
     },
+    grid1: {
+        [theme.breakpoints.down('xs')]: {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center"
+        }
+    },
     title: {
         fontSize: '40px'
     }
