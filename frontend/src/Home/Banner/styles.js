@@ -26,7 +26,7 @@ export default makeStyles((theme) => ({
             transform: 'scale(1.1)'
         },
         [theme.breakpoints.down('xs')]: {
-            fontSize: '70px'
+            fontSize: '40px'
         }
     },
     subtitle: {

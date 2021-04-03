@@ -1,11 +1,9 @@
-import React from 'react';
-import { CardMedia, Container, Grid, Typography } from '@material-ui/core'
+import React, { useEffect, useState } from 'react';
+import { CardMedia, Container, Grid, Typography, Fade, FormControlLabel, Switch, Paper } from '@material-ui/core'
 
 import useStyles from './styles';
 
 const Gallery = () => {
-    const classes = useStyles();
-
     const galleryArray = [
         {
             image: 'https://images.unsplash.com/photo-1549269459-ba9e31874ef2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
@@ -33,6 +31,24 @@ const Gallery = () => {
         },
     ];
 
+    const classes = useStyles();
+    
+    const [show, setShow] = useState(false);
+    const galleryPosition = 200;
+
+    useEffect(() => {
+        function onScroll() {
+            let currentPosition = window.pageYOffset; 
+            if(currentPosition > galleryPosition) {
+                setShow(true);
+            } else {
+                setShow(false)
+            }
+        }
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [window.pageYOffset])
+
     const images = galleryArray.map((item) => {
         const container = {};
 
@@ -40,7 +56,7 @@ const Gallery = () => {
         container.text = item.text;
 
         return (
-            <Grid item xs={12} sm={4} className={classes.container}>
+            <Grid item xs={12} sm={4} className={classes.grid}>
                 <CardMedia className={classes.cardMedia} component="img" image={item.image} />
                 <Typography className={classes.text}>{item.text}</Typography>
             </Grid>
@@ -48,12 +64,18 @@ const Gallery = () => {
     })
 
     return (
-        <Container className={classes.container}>
-            <Typography className={classes.title} variant="h1">Галерија</Typography>
-            <Grid container justify="space-between" alignItems="stretch" spacing={3}>
-                {images}
-            </Grid>
-        </Container>
+        <div>
+            <Fade in={show} timeout={{ enter: 2500 }}>
+                <Paper elevation={4} className={classes.paper}>
+                    <Container className={classes.container}>
+                        <Typography className={classes.title} variant="h1">Галерија</Typography>
+                        <Grid container justify="space-between" alignItems="stretch" spacing={3}>
+                            {images}
+                        </Grid>
+                    </Container>
+                </Paper>
+            </Fade>
+        </div>
     )
 }
 

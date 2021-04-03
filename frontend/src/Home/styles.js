@@ -6,5 +6,5 @@ export default makeStyles(() => ({
         height: '100%',
         paddingLeft: '0px',
         paddingRight: 0,
-    },
+    }
 }));
