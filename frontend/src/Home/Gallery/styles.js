@@ -8,10 +8,25 @@ export default makeStyles((theme) => ({
         alignItems: "center",
         justifyContent: "center"
     },
+    title: {
+        fontSize: '120px',
+        color: 'black',
+        transition: 'all .2s ease-in-out',
+        '&:hover': {
+            transform: 'scale(1.1)'
+        },
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '70px'
+        }
+    },
     cardMedia: {
         width: '100%',
         height: '400px',
-        filter: 'brightness(50%)'
+        filter: 'brightness(50%)',
+        transition: 'all .2s ease-in-out',
+        '&:hover': {
+            transform: 'scale(1.04)'
+        },
     },
     text: {
         position: 'absolute',
@@ -25,5 +40,5 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             fontSize: '20px'
         }
-    }
+    },
 }))

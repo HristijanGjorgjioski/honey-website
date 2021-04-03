@@ -48,9 +48,9 @@ const Gallery = () => {
     })
 
     return (
-        <Container>
-            <Typography variant="h1">Галерија</Typography>
-            <Grid container justify="space-between" alignItems="stretch" spacing={2}>
+        <Container className={classes.container}>
+            <Typography className={classes.title} variant="h1">Галерија</Typography>
+            <Grid container justify="space-between" alignItems="stretch" spacing={3}>
                 {images}
             </Grid>
         </Container>

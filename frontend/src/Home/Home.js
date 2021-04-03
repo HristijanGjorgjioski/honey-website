@@ -4,6 +4,7 @@ import Banner from './Banner/Banner';
 
 import useStyles from './styles';
 import Gallery from './Gallery/Gallery';
+import WhyUs from './WhyUs/WhyUs';
 
 const Home = () => {
     const classes = useStyles();
@@ -12,6 +13,7 @@ const Home = () => {
         <Container className={classes.container}>
             <Banner />
             <Gallery />
+            <WhyUs />
         </Container>
     )
 }
