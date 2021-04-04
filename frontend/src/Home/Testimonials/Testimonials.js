@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel'
-import { Container, Paper, Button, Typography, CardMedia, Grid } from '@material-ui/core';
+import { Container, Paper, Typography, CardMedia, Grid } from '@material-ui/core';
 
 import useStyles from './styles';
 

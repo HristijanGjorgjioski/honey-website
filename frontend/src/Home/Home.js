@@ -6,6 +6,7 @@ import useStyles from './styles';
 import Gallery from './Gallery/Gallery';
 import WhyUs from './WhyUs/WhyUs';
 import Testimonials from './Testimonials/Testimonials';
+import Info from './Info/Info';
 
 const Home = () => {
     const classes = useStyles();
@@ -16,6 +17,7 @@ const Home = () => {
             <Gallery />
             <WhyUs />
             <Testimonials />
+            <Info />
         </Container>
     )
 }
