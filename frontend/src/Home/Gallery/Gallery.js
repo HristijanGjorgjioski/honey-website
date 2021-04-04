@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CardMedia, Container, Grid, Typography, Fade, FormControlLabel, Switch, Paper } from '@material-ui/core'
+import { CardMedia, Container, Grid, Typography, Fade, Paper } from '@material-ui/core'
 
 import useStyles from './styles';
 
@@ -49,14 +49,14 @@ const Gallery = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, [window.pageYOffset])
 
-    const images = galleryArray.map((item) => {
+    const images = galleryArray.map((item, index) => {
         const container = {};
 
         container[item.image] = item.image;
         container.text = item.text;
 
         return (
-            <Grid item xs={12} sm={4} className={classes.grid}>
+            <Grid key={index} item xs={12} sm={4} className={classes.grid}>
                 <CardMedia className={classes.cardMedia} component="img" image={item.image} />
                 <Typography className={classes.text}>{item.text}</Typography>
             </Grid>

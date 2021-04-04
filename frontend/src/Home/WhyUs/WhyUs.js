@@ -23,11 +23,14 @@ const WhyUs = () => {
     ];
 
     const [show, setShow] = useState(false);
-    const whyUsPosition = 1200;
+    let whyUsPosition = 1200;
 
     useEffect(() => {
         function onScroll() {
             let currentPosition = window.pageYOffset; 
+            if(window.innerWidth < 599) {
+                whyUsPosition = 2800;
+            }
             if(currentPosition > whyUsPosition) {
                 setShow(true);
             } else {
@@ -38,14 +41,14 @@ const WhyUs = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, [window.pageYOffset])
 
-    const facts = argumentsArray.map((argument) => {
+    const facts = argumentsArray.map((argument, index) => {
         const container = {};
 
         container[argument.title] = argument.title;
         container.subtitle = argument.subtitle;
 
         return (
-            <div style={{ display: 'flex', marginTop: '10%' }}>
+            <div key={index} style={{ display: 'flex', marginTop: '10%' }}>
                 <CheckCircleOutlineTwoTone fontSize="large" style={{ color: 'green' }} />
                 <div style={{ display: 'block' }}>
                     <Typography variant="body1">{argument.title}</Typography>

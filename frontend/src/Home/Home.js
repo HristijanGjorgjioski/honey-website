@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container } from '@material-ui/core'
 import Banner from './Banner/Banner';
 
@@ -12,14 +12,7 @@ const Home = () => {
     return (
         <Container className={classes.container}>
             <Banner />
-
-
-            
-                <Gallery />
-            
-
-
-
+            <Gallery />
             <WhyUs />
         </Container>
     )

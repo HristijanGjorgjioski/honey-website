@@ -23,7 +23,7 @@ export default makeStyles((theme) => ({
         color: 'black',
         transition: 'all .2s ease-in-out',
         '&:hover': {
-            transform: 'scale(1.1)'
+            transform: 'scale(1.05)'
         },
         [theme.breakpoints.down('xs')]: {
             fontSize: '70px'
