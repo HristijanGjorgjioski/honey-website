@@ -3,7 +3,7 @@ import { CardMedia, Container, Typography, Paper, Fade } from '@material-ui/core
 
 import useStyles from './styles';
 
-import banner from '../../assets/images/banner.jfif';
+import banner from '../../../assets/images/banner.jfif';
 
 const Banner = () => {
     const classes = useStyles();

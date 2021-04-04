@@ -1,15 +1,23 @@
-import { Divider } from '@material-ui/core'
 import React from 'react'
-import Home from './Home/Home'
+import { Box, Container } from '@material-ui/core'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Home from './Pages/Home/Home'
 import Navbar from './Navbar/Navbar'
 
 const App = () => {
     return (
-        <div style={{ width: '100%', margin: 0, padding: 0 }}>
-            <Navbar />
-            <Divider />
-            <Home />
-        </div>
+        <BrowserRouter>
+            <Box style={{ padding: 0, margin: 0, border: 0 }}>
+                <Navbar />
+                <Switch>
+                    <Route path="/" component={Home} />
+                    {/* <Route path="/products" component={Products} />
+                    <Route path="/about" component={About} />
+                    <Route path="/contact" component={Contact} /> */}
+                </Switch>
+            </Box>
+        </BrowserRouter>
     )
 }
 

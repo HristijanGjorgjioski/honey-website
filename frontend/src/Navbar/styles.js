@@ -3,9 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
     appBar: {
         backgroundColor: '#e8e864',
-        width: '100%'
+        width: '100%',
     },
     text: {
-        color: 'black'
+        color: 'black',
+        textDecoration: 'none'
+    },
+    link: {
+        color: 'black',
+        textDecoration: 'none'
     }
 }))

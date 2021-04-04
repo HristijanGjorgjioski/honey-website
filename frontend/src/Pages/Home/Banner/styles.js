@@ -2,9 +2,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     container: {
-        marginTop: '10px',
-        marginBottom: '10px',
-        padding: 0,
+        width: '100%',
+        // padding: 0,
+        border: 0,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
