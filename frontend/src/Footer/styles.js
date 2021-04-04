@@ -9,5 +9,16 @@ export default makeStyles(() => ({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center"
+    },
+    gridContainer: {
+        padding: '10px'
+    },
+    gridItem: {
+        padding: '10px',
+        backgroundColor: '#2a2a9c',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
     }
 }));

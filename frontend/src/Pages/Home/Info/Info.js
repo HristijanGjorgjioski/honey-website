@@ -8,7 +8,7 @@ const Info = () => {
     const classes = useStyles();
 
     const [show, setShow] = useState(false);
-    let whyUsPosition = 2160;
+    let whyUsPosition = 2130;
 
     useEffect(() => {
         function onScroll() {
