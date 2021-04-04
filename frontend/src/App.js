@@ -8,7 +8,7 @@ import Navbar from './Navbar/Navbar'
 const App = () => {
     return (
         <BrowserRouter>
-            <Box style={{ padding: 0, margin: 0, border: 0 }}>
+            <Box>
                 <Navbar />
                 <Switch>
                     <Route path="/" component={Home} />

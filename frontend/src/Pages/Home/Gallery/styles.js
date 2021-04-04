@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
     container: {
         flexGrow: 1,
-        backgroundColor: '#e8e864',
+        backgroundColor: '#F65058FF',
         marginTop: '5%',
         marginBottom: '5%',
         display: "flex",

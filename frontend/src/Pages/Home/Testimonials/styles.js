@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
     container: {
         flexGrow: 1,
-        backgroundColor: '#e8e864',
+        backgroundColor: '#F65058FF',
         marginTop: '5%',
         marginBottom: '5%',
         display: "flex",
@@ -24,6 +24,8 @@ export default makeStyles((theme) => ({
         alignItems: 'center'
     },
     grid1: {
+        backgroundColor: '#edb7e8',
+        padding: 0,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',

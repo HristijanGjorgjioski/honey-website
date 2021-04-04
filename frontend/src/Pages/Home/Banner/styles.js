@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
     container: {
         width: '100%',
-        // padding: 0,
+        padding: 0,
         border: 0,
         display: "flex",
         flexDirection: "column",
@@ -13,7 +13,7 @@ export default makeStyles((theme) => ({
     image: {
         height: '100vh',
         width: '100%',
-        marginLeft: 0,
+        margin: 0,
         filter: 'brightness(40%)'
     },
     title: {
