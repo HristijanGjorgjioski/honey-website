@@ -48,34 +48,32 @@ const WhyUs = () => {
         container.subtitle = argument.subtitle;
 
         return (
-            <div key={index} style={{ display: 'flex', marginTop: '10%' }}>
+            <Container key={index} style={{ display: 'flex', marginTop: '10%' }}>
                 <CheckCircleOutlineTwoTone fontSize="large" style={{ color: 'green' }} />
-                <div style={{ display: 'block' }}>
+                <Container style={{ display: 'block' }}>
                     <Typography variant="body1">{argument.title}</Typography>
                     <Typography variant="body2">{argument.subtitle}</Typography>
-                </div>
-            </div>
+                </Container>
+            </Container>
         )
     })
 
     return (
-        <div>
-            <Fade in={show} timeout={{ enter: 2500 }}>
-                <Paper elevation={4} className={classes.paper}>
-                    <Container className={classes.container}>
-                        <Typography className={classes.title}>Зошто би требало да купите мед од кај нас?</Typography>
-                        <Grid className={classes.mainGrid} container justify="space-between" alignItems="stretch" spacing={1}>
-                            <Grid className={classes.grid1} item sm={6} xs={12}>
-                                {facts}
-                            </Grid>
-                            <Grid item sm={6} xs={12}>
-                                <CardMedia component="img" image="https://cdn.pixabay.com/photo/2016/07/23/17/22/beekeeping-1537156_960_720.jpg" />
-                            </Grid>
+        <Fade in={show} timeout={{ enter: 2000 }}>
+            <Paper elevation={4} className={classes.paper}>
+                <Container className={classes.container}>
+                    <Typography className={classes.title}>Зошто би требало да купите мед од кај нас?</Typography>
+                    <Grid className={classes.mainGrid} container justify="space-between" alignItems="stretch" spacing={1}>
+                        <Grid className={classes.grid1} item sm={6} xs={12}>
+                            {facts}
                         </Grid>
-                    </Container>
-                </Paper>
-            </Fade>
-        </div>
+                        <Grid item sm={6} xs={12}>
+                            <CardMedia component="img" image="https://cdn.pixabay.com/photo/2016/07/23/17/22/beekeeping-1537156_960_720.jpg" />
+                        </Grid>
+                    </Grid>
+                </Container>
+            </Paper>
+        </Fade>
     )
 }
 

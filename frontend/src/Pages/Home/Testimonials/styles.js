@@ -2,7 +2,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     container: {
-        flexGrow: 1,
         backgroundColor: '#F65058FF',
         marginTop: '5%',
         marginBottom: '5%',
@@ -10,10 +9,6 @@ export default makeStyles((theme) => ({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center"
-    },
-    paper: {
-        width: '100%',
-        padding: '15px',
     },
     carousel: {
         width: '100%',

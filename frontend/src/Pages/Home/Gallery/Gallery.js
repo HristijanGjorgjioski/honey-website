@@ -65,7 +65,7 @@ const Gallery = () => {
 
     return (
         <div>
-            <Fade in={show} timeout={{ enter: 2500 }}>
+            <Fade in={show} timeout={{ enter: 2000 }}>
                 <Paper elevation={4} className={classes.paper}>
                     <Container className={classes.container}>
                         <Typography className={classes.title} variant="h1">Галерија</Typography>
