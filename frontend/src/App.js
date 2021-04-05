@@ -1,6 +1,8 @@
 import React from 'react'
 import { Box } from '@material-ui/core'
+import EjectIcon from '@material-ui/icons/Eject';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import ScrollToTop from 'react-scroll-up';
 
 import Home from './components/Pages/Home/Home'
 import Navbar from './components/Navbar/Navbar'
@@ -13,6 +15,9 @@ const App = () => {
         <BrowserRouter>
             <Box>
                 <Navbar />
+                <ScrollToTop style={{ zIndex: 1 }} showUnder={160}>
+                    <EjectIcon style={{ color: '#FBDE44FF', fontSize: '60px' }} />
+                </ScrollToTop>
                 <Switch>
                     <Route exact path="/" component={Home} />
                     {/* <Route path="/products" component={Products} /> */}
