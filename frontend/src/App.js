@@ -1,12 +1,12 @@
 import React from 'react'
-import { Box, Container } from '@material-ui/core'
+import { Box } from '@material-ui/core'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Home from './Pages/Home/Home'
-import Navbar from './Navbar/Navbar'
-import Footer from './Footer/Footer';
-import About from './Pages/About/About';
-import Contact from './Pages/Contact/Contact';
+import Home from './components/Pages/Home/Home'
+import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer';
+import About from './components/Pages/About/About';
+import Contact from './components/Pages/Contact/Contact';
 
 const App = () => {
     return (
