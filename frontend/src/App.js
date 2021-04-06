@@ -9,6 +9,7 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer';
 import About from './components/Pages/About/About';
 import Contact from './components/Pages/Contact/Contact';
+import Products from './components/Pages/Products/Products';
 
 const App = () => {
     return (
@@ -20,7 +21,7 @@ const App = () => {
                 </ScrollToTop>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    {/* <Route path="/products" component={Products} /> */}
+                    <Route path="/products" component={Products} />
                     <Route path="/about" component={About} />
                     <Route path="/contact" component={Contact} />
                 </Switch>

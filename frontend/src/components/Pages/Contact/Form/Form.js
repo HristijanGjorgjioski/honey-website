@@ -14,7 +14,7 @@ const Form = () => {
                 <TextField className={classes.textfield} name="number" variant="outlined" label="Тел. Број" fullWidth />
                 <TextField className={classes.textfield} name="email" variant="outlined" label="Е-маил Адреса" fullWidth />
                 <TextField className={classes.textfield} name="message" variant="outlined" multiline rows={4} label="Вашата Порака" fullWidth />
-                <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+                <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Испрати</Button>
             </form>
         </Container>
     )
