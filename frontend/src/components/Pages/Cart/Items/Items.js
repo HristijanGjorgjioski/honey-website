@@ -9,7 +9,7 @@ const Items = () => {
     return (
         <Card className={classes.root} variant="outlined">
             <CardContent>
-                <Typography variant="h5" component="h2">Наслов</Typography>
+                <Typography variant="h5" component="h2">Име на продукт</Typography>
                 <Typography className={classes.pos} color="textSecondary">Цена: </Typography>
                 <Typography variant="body2" component="p">Количина: </Typography>
             </CardContent>

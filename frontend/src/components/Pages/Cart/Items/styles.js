@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
     root: {
         minWidth: '60%',
+        [theme.breakpoints.down('xs')]: {
+            minWidth: '90%'
+        }
       },
       bullet: {
         display: 'inline-block',

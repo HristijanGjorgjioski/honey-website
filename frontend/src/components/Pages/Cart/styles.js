@@ -10,5 +10,9 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             marginTop: '16%'
         }
+    },
+    total: {
+        marginTop: '1%',
+        marginBottom: '4%'
     }
 }));

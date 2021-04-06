@@ -18,7 +18,6 @@ export default makeStyles(() => ({
     },
     gridItem: {
         padding: '10px',
-        //backgroundColor: '#2a2a9c',
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
