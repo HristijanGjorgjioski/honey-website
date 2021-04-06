@@ -11,7 +11,7 @@ const Products = () => {
         {
             id: 1,
             title: 'Мед',
-            price: '600',
+            price: 600,
             weight: '1 кило',
             description: '100% природен планински мед!',
             photo: 'https://cdn.pixabay.com/photo/2015/06/27/16/35/honey-823614_960_720.jpg',
@@ -20,7 +20,7 @@ const Products = () => {
         {
             id: 2,
             title: 'Мед2',
-            price: '700',
+            price: 700,
             weight: '1 кило',
             description: '106% природен планински мед!',
             photo: 'https://cdn.pixabay.com/photo/2015/06/27/16/35/honey-823614_960_720.jpg',

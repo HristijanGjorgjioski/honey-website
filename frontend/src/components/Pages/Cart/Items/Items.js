@@ -6,7 +6,7 @@ import { MainContext } from '../../../../context/context';
 import useStyles from './styles';
 
 const Items = () => {
-    const { cart } = useContext(MainContext);
+    const { cart, deleteFromCart } = useContext(MainContext);
     const classes = useStyles();
     console.log(cart);
 
@@ -22,8 +22,7 @@ const Items = () => {
                     <Typography variant="body2" component="p">Количина: 1</Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small"><AddShoppingCart color="primary" /></Button>
-                    <Button size="small"><RemoveShoppingCart color="secondary" /></Button>
+                    <Button size="small" onClick={() => deleteFromCart(item.id)}><RemoveShoppingCart color="secondary" /></Button>
                 </CardActions>   
             </Card>
             </>
