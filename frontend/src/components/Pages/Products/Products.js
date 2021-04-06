@@ -1,7 +1,8 @@
 import React from 'react'
-import { Container, Grid, Typography, Button, Card, CardMedia, CardContent, CardActions, CardActionArea } from '@material-ui/core'
+import { Container, Grid, Typography } from '@material-ui/core'
 
 import useStyles from './styles';
+import CustomCard from './CustomCard/CustomCard';
 
 const Products = () => {
     const classes = useStyles();
@@ -33,35 +34,7 @@ const Products = () => {
     const products = productsArray.map((product) => {
         return (
             <Grid item xs={5} sm={4}>
-                 <Card className={classes.root}>
-                    <CardActionArea>
-                        <CardMedia
-                        className={classes.media}
-                        component="img"
-                        image={product.photo}
-                        title="Contemplative Reptile"
-                        />
-                        <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {product.title}
-                        </Typography>
-                        <Typography variant="body1" color="textSecondary" component="p">
-                            {product.description}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            {product.price} денари
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                        Share
-                        </Button>
-                        <Button size="small" color="primary">
-                        Learn More
-                        </Button>
-                    </CardActions>
-                </Card>
+                 <CustomCard photo={product.photo} title={product.title} price={product.price} description={product.description} weight={product.weight} />
             </Grid>
         )
     })
