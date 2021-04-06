@@ -31,22 +31,22 @@ const Products = () => {
         }
     ];
 
-    const products = productsArray.map((product) => {
+    const products = productsArray.map((product, index) => {
         return (
-            <Grid item xs={5} sm={4}>
+            <Grid key={index} item xs={6} sm={4}>
                  <CustomCard photo={product.photo} title={product.title} price={product.price} description={product.description} weight={product.weight} />
             </Grid>
         )
-    })
+    });
 
     return (
         <Container className={classes.container}>
             <Typography className={classes.title} variant="h3">Продавница</Typography>
-            <Grid container justify="space-between" alignItems="strecth" spacing={2}>
+            <Grid container justify="space-between" alignItems="stretch" spacing={2}>
                 {products}
             </Grid>
         </Container>
     )
 }
 
-export default Products
+export default Products;

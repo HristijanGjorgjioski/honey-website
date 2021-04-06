@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import About from './components/Pages/About/About';
 import Contact from './components/Pages/Contact/Contact';
 import Products from './components/Pages/Products/Products';
+import Cart from './components/Pages/Cart/Cart';
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                     <Route path="/products" component={Products} />
                     <Route path="/about" component={About} />
                     <Route path="/contact" component={Contact} />
+                    <Route path="/cart" component={Cart} />
                 </Switch>
                 <Footer />
             </Box>
