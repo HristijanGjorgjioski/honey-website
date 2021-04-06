@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
         alignItems: "center",
         justifyContent: "center",
         [theme.breakpoints.down('xs')]: {
-            marginTop: '13%'
+            marginTop: '15%'
         }
     },
     title: {
