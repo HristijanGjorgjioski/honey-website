@@ -1,5 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 
+import contextReducer from './contextReducer';
+
 const inititalState = [];
 
 export const MainContext = createContext(inititalState);
@@ -20,6 +22,5 @@ export const Provider = ({ children }) => {
         }}>
             {children}
         </MainContext.Provider>
-    )
-
-}
+    );
+};

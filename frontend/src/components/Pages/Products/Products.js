@@ -9,6 +9,7 @@ const Products = () => {
 
     const productsArray = [
         {
+            id: 1,
             title: 'Мед',
             price: '600',
             weight: '1 кило',
@@ -16,6 +17,7 @@ const Products = () => {
             photo: 'https://cdn.pixabay.com/photo/2015/06/27/16/35/honey-823614_960_720.jpg'
         },
         {
+            id: 2,
             title: 'Мед2',
             price: '700',
             weight: '1 кило',
@@ -23,6 +25,7 @@ const Products = () => {
             photo: 'https://cdn.pixabay.com/photo/2015/06/27/16/35/honey-823614_960_720.jpg'
         },
         {
+            id: 3,
             title: 'Мед3',
             price: '1000',
             weight: '1 кило',
@@ -34,7 +37,7 @@ const Products = () => {
     const products = productsArray.map((product, index) => {
         return (
             <Grid key={index} item xs={6} sm={4}>
-                 <CustomCard photo={product.photo} title={product.title} price={product.price} description={product.description} weight={product.weight} />
+                 <CustomCard photo={product.photo} title={product.title} price={product.price} description={product.description} weight={product.weight} id={product.id} />
             </Grid>
         )
     });

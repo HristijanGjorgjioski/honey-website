@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, MenuItem, Toolbar, Box, Typography } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
+import { MainContext } from '../../context/context';
 import useStyles from './styles';
 
 const Navbar = () => {
+    const { cartLength } = useContext(MainContext);
     const classes = useStyles();
 
     return (
@@ -17,7 +19,7 @@ const Navbar = () => {
                     <MenuItem><Typography className={classes.text}><Link className={classes.link} to="/about">За Нас</Link></Typography></MenuItem>
                     <MenuItem><Typography className={classes.text}><Link className={classes.link} to="/contact">Контакт</Link></Typography></MenuItem>
                 </Box>
-                <MenuItem><Link to="/cart" style={{ textDecoration: 'none' }}><ShoppingCartIcon style={{ color: '#28334AFF' }} />2</Link></MenuItem>
+                <MenuItem><Link to="/cart" style={{ textDecoration: 'none' }}><ShoppingCartIcon style={{ color: '#28334AFF' }} />{cartLength}</Link></MenuItem>
             </Toolbar>
         </AppBar>
     )
