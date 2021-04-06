@@ -1,24 +1,42 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Card, CardContent, Typography, CardActions, Button } from '@material-ui/core';
 import { RemoveShoppingCart, AddShoppingCart } from '@material-ui/icons';
 
+import { MainContext } from '../../../../context/context';
 import useStyles from './styles';
+
 const Items = () => {
+    const { cart } = useContext(MainContext);
     const classes = useStyles();
+    console.log(cart);
+
+    const cartItems = cart.map((item) => {
+        return (
+            <>
+            <Card className={classes.root} variant="outlined">
+                <CardContent>
+                    <Typography variant="h5" component="h2">{item.title}</Typography>
+                    <Typography color="textSecondary">{item.description}</Typography>
+                    <Typography color="textSecondary">Тежина: {item.weight}</Typography>
+                    <Typography color="textSecondary">Цена: {item.price}</Typography>
+                    <Typography variant="body2" component="p">Количина: 1</Typography>
+                </CardContent>
+                <CardActions>
+                    <Button size="small"><AddShoppingCart color="primary" /></Button>
+                    <Button size="small"><RemoveShoppingCart color="secondary" /></Button>
+                </CardActions>   
+            </Card>
+            </>
+        )
+    })
     
     return (
-        <Card className={classes.root} variant="outlined">
-            <CardContent>
-                <Typography variant="h5" component="h2">Име на продукт</Typography>
-                <Typography className={classes.pos} color="textSecondary">Цена: </Typography>
-                <Typography variant="body2" component="p">Количина: </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small"><AddShoppingCart color="primary" /></Button>
-                <Button size="small"><RemoveShoppingCart color="secondary" /></Button>
-            </CardActions>
-        </Card>
-    )
-}
+        <>
+            {cartItems}
+        </>
+    );
+};
 
 export default Items
+
+  

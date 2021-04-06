@@ -18,7 +18,8 @@ export const Provider = ({ children }) => {
         <MainContext.Provider value={{
             addToCart,
             deleteFromCart,
-            cartLength
+            cartLength,
+            cart
         }}>
             {children}
         </MainContext.Provider>

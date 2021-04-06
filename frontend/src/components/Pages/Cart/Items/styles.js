@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     root: {
+        marginTop: '1%',
         minWidth: '60%',
         [theme.breakpoints.down('xs')]: {
             minWidth: '90%'

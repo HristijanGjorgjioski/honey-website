@@ -4,8 +4,8 @@ import { RemoveShoppingCart, AddShoppingCart } from '@material-ui/icons';
 
 import { MainContext } from '../../../../context/context';
 
-const CustomCard = ({ photo, price, title, description, weight, id }) => {
-    const item = { photo, price, title, description, weight, id };
+const CustomCard = ({ photo, price, title, description, weight, id, quantity }) => {
+    const item = { photo, price, title, description, weight, id, quantity };
     const { addToCart, deleteFromCart } = useContext(MainContext);
 
     return (
@@ -20,7 +20,7 @@ const CustomCard = ({ photo, price, title, description, weight, id }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" onClick={() => addToCart(item)}><AddShoppingCart color="primary" /></Button>
+                <Button size="small" onClick={() => addToCart({...item, quantity: quantity+1})}><AddShoppingCart color="primary" /></Button>
                 <Button size="small" onClick={() => deleteFromCart(id)}><RemoveShoppingCart color="secondary" /></Button>
             </CardActions>
         </Card>
