@@ -1,7 +1,5 @@
 import React, { createContext, useReducer, useState } from 'react';
 
-import contextReducer from './contextReducer';
-
 const inititalState = [];
 
 export const MainContext = createContext(inititalState);
@@ -29,15 +27,15 @@ export const Provider = ({ children }) => {
         const index = cart.findIndex(p => p.id === id);
 
         cart[index].quantity -= 1;
-        const filteredCart = cart.filter((p) => p.quantity === 0);
+        const filteredCart = cart.filter((p) => p.quantity !== 0);
         const updateCart = [...filteredCart];
         setCart(updateCart);
         return cart;
     }
 
-
     const cartLength = cart.length;
-    const totalPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+
+    const totalPrice = cart.reduce((acc, curr) => acc + curr.price*curr.quantity, 0);
 
     return (
         <MainContext.Provider value={{

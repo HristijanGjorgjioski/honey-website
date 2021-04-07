@@ -8,15 +8,20 @@ import { MainContext } from '../../../context/context';
 
 const Cart = () => {
     const classes = useStyles();
-    const { totalPrice } = useContext(MainContext);
+    const { totalPrice, cart } = useContext(MainContext);
 
     return (
         <Container className={classes.container}>
-            <Typography variant="h3">Кошница</Typography>
-            <Items />
-            <Typography className={classes.total}>Вкупно: {totalPrice} денари</Typography>
-            <Divider />
-            <Form />
+            {cart.length === 0 ? 
+                <Typography variant="h4">Вашата кошница е празна!</Typography>
+            : <>
+                    <Typography variant="h3">Кошница</Typography>
+                    <Items />
+                    <Typography className={classes.total}>Вкупно: {totalPrice} денари</Typography>
+                    <Divider />
+                    <Form />
+                </>
+            }
         </Container>
     )
 }
