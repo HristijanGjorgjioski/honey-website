@@ -6,13 +6,12 @@ import { MainContext } from '../../../../context/context';
 import useStyles from './styles';
 
 const Items = () => {
-    const { cart, deleteFromCart } = useContext(MainContext);
+    const { cart, addToCart, deleteFromCart } = useContext(MainContext);
     const classes = useStyles();
     console.log(cart);
 
     const cartItems = cart.map((item) => {
         return (
-            // <>
             <Card key={item.id} className={classes.root} variant="outlined">
                 <CardContent>
                     <Typography variant="h5" component="h2">{item.title}</Typography>
@@ -22,10 +21,10 @@ const Items = () => {
                     <Typography variant="body2" component="p">Количина: {item.quantity}</Typography>
                 </CardContent>
                 <CardActions>
+                    <Button size="small" onClick={() => addToCart(item)}><AddShoppingCart color="primary" /></Button>
                     <Button size="small" onClick={() => deleteFromCart(item.id)}><RemoveShoppingCart color="secondary" /></Button>
                 </CardActions>   
             </Card>
-            // </>
         )
     })
     
