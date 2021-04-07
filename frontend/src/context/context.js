@@ -1,4 +1,6 @@
-import React, { createContext, useReducer, useState } from 'react';
+import React, { createContext, useState } from 'react';
+
+import * as api from '../api/api';
 
 const inititalState = [];
 
@@ -31,6 +33,11 @@ export const Provider = ({ children }) => {
         const updateCart = [...filteredCart];
         setCart(updateCart);
         return cart;
+    };
+
+    const submitOrder = async (order, router) => {
+        await api.submitOrder(order);
+        router.push('/');
     }
 
     const cartLength = cart.length;
@@ -43,7 +50,8 @@ export const Provider = ({ children }) => {
             deleteFromCart,
             cartLength,
             totalPrice,
-            cart
+            cart,
+            submitOrder
         }}>
             {children}
         </MainContext.Provider>

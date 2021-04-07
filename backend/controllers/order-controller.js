@@ -1,6 +1,6 @@
-import Order from '../models/order-model';
+import Order from '../models/order-model.js';
 
-export const postOrder = (req, res) => {
+export const postOrder = async (req, res) => {
     const { products, name, number, adress } = req.body;
 
     const newOrder = new Order({ products, name, number, adress });

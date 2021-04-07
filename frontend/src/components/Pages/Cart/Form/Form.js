@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { TextField, Button, Container, FormHelperText } from '@material-ui/core';
 
 import useStyles from './styles';
+import { MainContext } from '../../../../context/context';
 
 const Form = () => {
     const classes = useStyles();
+    const { totalPrice, cart } = useContext(MainContext);
+    const [order, setOrder] = useState({ cart, totalPrice, number: '', adress: '', name: '' });
+
+    const onFormSubmit = async (e) => {
+        e.preventDefault();
+    }
 
     return (
         <Container className={classes.container}>
             <form autoComplete="off" className={classes.form}>
-                <TextField name="name" variant="outlined" label="Име" fullWidth required />
-                <TextField className={classes.textfield} name="number" variant="outlined" label="Тел. Број" fullWidth required />
-                <TextField className={classes.textfield} name="adress" variant="outlined" label="Адреса" fullWidth required />
+                <TextField name="name" variant="outlined" label="Име" fullWidth required onChange={(e) => setOrder({ ...order, name: e.target.value })} />
+                <TextField className={classes.textfield} name="number" variant="outlined" label="Тел. Број" fullWidth required onChange={(e) => setOrder({ ...order, number: e.target.value })} />
+                <TextField className={classes.textfield} name="adress" variant="outlined" label="Адреса" fullWidth required onChange={(e) => setOrder({ ...order, adress: e.target.value })} />
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Порачај</Button>
                 <FormHelperText>Откако ќе порачате нашиот тим ќе ве исконтактира во најбрз можен рок. Ви благодариме!</FormHelperText>
             </form>
