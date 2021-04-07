@@ -35,12 +35,11 @@ export const Provider = ({ children }) => {
         return cart;
     };
 
-    const submitOrder = async (order, router) => {
+    const submitOrder = async (order) => {
         await api.submitOrder(order);
-        router.push('/');
     }
 
-    const cartLength = cart.length;
+    const cartLength = cart.reduce((acc, curr) => acc + curr.quantity, 0);
 
     const totalPrice = cart.reduce((acc, curr) => acc + curr.price*curr.quantity, 0);
 
@@ -51,6 +50,7 @@ export const Provider = ({ children }) => {
             cartLength,
             totalPrice,
             cart,
+            setCart,
             submitOrder
         }}>
             {children}

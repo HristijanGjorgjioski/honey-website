@@ -7,15 +7,16 @@ import { MainContext } from '../../../../context/context';
 
 const Form = () => {
     const classes = useStyles();
-    const { totalPrice, cart, submitOrder } = useContext(MainContext);
+    const { totalPrice, cart, setCart, submitOrder } = useContext(MainContext);
     const [order, setOrder] = useState({ cart, totalPrice, number: '', adress: '', name: '' });
     const history = useHistory();
 
     const onFormSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(order);
-        submitOrder(order, history);
+        submitOrder(order);
+        setCart([]);
+        history.push('/');
     }
 
     return (

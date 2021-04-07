@@ -5,7 +5,7 @@ import cors from 'cors';
 
 import orderRoutes from './routes/order-routes.js';
 
-const CONNECTION_URL = process.env.CONNECTION_URL || 'mongodb+srv://honey-website:12345@cluster0.u2uu1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECTION_URL = process.env.CONNECTION_URL || 'mongodb+srv://honey-website:12345@cluster0.u2uu1.mongodb.net/toni-website?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 const app = express();
