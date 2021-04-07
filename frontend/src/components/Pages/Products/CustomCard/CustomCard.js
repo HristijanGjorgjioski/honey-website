@@ -5,8 +5,26 @@ import { RemoveShoppingCart, AddShoppingCart } from '@material-ui/icons';
 import { MainContext } from '../../../../context/context';
 
 const CustomCard = ({ photo, price, title, description, weight, id, quantity }) => {
-    const item = { photo, price, title, description, weight, id, quantity };
-    const { addToCart, deleteFromCart } = useContext(MainContext);
+    const product = { photo, price, title, description, weight, id, quantity };
+    const { addToCart, deleteFromCart, cart } = useContext(MainContext);
+    console.log(cart);
+
+    const addItem = (item) => {
+        const index = cart.findIndex(p => p.id === item.id);
+
+        if(index === -1) {
+            cart.push({ ...item, quantity: 1 });
+            const updateCart = [...cart];
+            // addToCart(updateCart);
+            console.log(updateCart.length);
+            return updateCart;
+        } else {
+            cart[index].quantity += 1;
+            const updateCart = [...cart];
+            // addToCart(updateCart);
+            return updateCart;
+        }
+    }
 
     return (
         <Card>
@@ -20,7 +38,7 @@ const CustomCard = ({ photo, price, title, description, weight, id, quantity }) 
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" onClick={() => addToCart({...item, quantity: quantity+1})}><AddShoppingCart color="primary" /></Button>
+                <Button size="small" onClick={() => addItem(product)}><AddShoppingCart color="primary" /></Button>
                 <Button size="small" onClick={() => deleteFromCart(id)}><RemoveShoppingCart color="secondary" /></Button>
             </CardActions>
         </Card>
