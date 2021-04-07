@@ -7,7 +7,6 @@ import { MainContext } from '../../../../context/context';
 const CustomCard = ({ photo, price, title, description, weight, id, quantity }) => {
     const product = { photo, price, title, description, weight, id, quantity };
     const { addToCart, cart } = useContext(MainContext);
-    console.log(cart);
 
     return (
         <Card>

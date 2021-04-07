@@ -8,7 +8,6 @@ import useStyles from './styles';
 const Items = () => {
     const { cart, addToCart, deleteFromCart } = useContext(MainContext);
     const classes = useStyles();
-    console.log(cart);
 
     const cartItems = cart.map((item) => {
         return (
