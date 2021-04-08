@@ -1,3 +1,30 @@
 <%- include("./head.ejs") %>
 
     <%- include("./navigation.ejs") %> 
+
+    <% if(orders.length > 0) { %>
+        <div style="display: flex;">
+        <% for(let order of orders) { %>
+            <div class="card" style="width: 18rem; margin-top: 2%; margin-right: 2%;">
+                <div class="card-body">
+                  <h5 class="card-title">Име: <%= order.name %></h5>
+                  <p class="card-text">Тел.Број: <%= order.number %></p>
+                  <p class="card-text">Адреса: <%= order.adress %></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <% order.products.map((p) => { %>
+                        <li class="list-group-item"><b>Име на производ: <%= p.title %></b></li>
+                        <li class="list-group-item">Килажа: <%= p.weight %></li>
+                        <li class="list-group-item">Цена на производ: <%= p.price %></li>
+                        <li class="list-group-item">Количина: <%= p.quantity %></li>
+                    <% }) %>
+                    <br />
+                  <li class="list-group-item"><b>Вкупно: <%= order.totalPrice %> денари</b></li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Избриши</a>
+                </div>
+            </div>
+        <% } %>
+        </div>
+    <% } %>

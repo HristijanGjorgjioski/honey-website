@@ -2,7 +2,7 @@ import Order from '../models/order-model.js';
 
 export const getOrder = async (req, res) => {
     try {
-        const allOrders = Order.find();
+        const allOrders = await Order.find();
         return res.render('all-orders', {
             orders: allOrders
         });

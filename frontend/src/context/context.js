@@ -9,6 +9,10 @@ export const MainContext = createContext(inititalState);
 export const Provider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
+    const cartLength = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+
+    const totalPrice = cart.reduce((acc, curr) => acc + curr.price*curr.quantity, 0);
+
     const addToCart = (item) => {
         const index = cart.findIndex(p => p.id === item.id);
 
@@ -38,10 +42,6 @@ export const Provider = ({ children }) => {
     const submitOrder = async (order) => {
         await api.submitOrder(order);
     }
-
-    const cartLength = cart.reduce((acc, curr) => acc + curr.quantity, 0);
-
-    const totalPrice = cart.reduce((acc, curr) => acc + curr.price*curr.quantity, 0);
 
     return (
         <MainContext.Provider value={{
