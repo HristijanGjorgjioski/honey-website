@@ -28,3 +28,10 @@ export const postProducts = async (req, res) => {
         console.log(error);
     }
 };
+
+export const deleteProduct = async (req, res) => {
+    const { _id } = req.params;
+
+    await Product.deleteOne({ _id });
+    res.redirect('/all-products');
+};
