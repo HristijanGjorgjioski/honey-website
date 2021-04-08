@@ -2,5 +2,28 @@
 
     <%- include("../navigation.ejs") %> 
 
-
     <%- include("./add-product.ejs") %> 
+
+    <br />
+    <br />
+    <br />
+
+    <h1>Сите производи</h1>
+
+    <% if(products.length > 0) { %>
+        <div style="display: flex;">
+            <% for(let product of products) { %>
+                <div class="card" style="width: 18rem; margin-top: 2%; margin-right: 2%;">
+                    <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Име на производ: <%= product.title %></b></li>
+                            <li class="list-group-item">Килажа: <%= product.weight %></li>
+                            <li class="list-group-item">Цена на производ: <%= product.price %> денари</li>
+                        <br />
+                    </ul>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Избриши</a>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    <% } %>

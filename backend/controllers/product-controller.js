@@ -18,7 +18,7 @@ export const postProducts = async (req, res) => {
 
     try {
         await newProduct.save();
-        res.redirect('/');
+        res.redirect('/all-products');
     } catch (error) {
         console.log(error);
     }
