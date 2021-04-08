@@ -11,7 +11,7 @@ const Items = () => {
 
     const cartItems = cart.map((item) => {
         return (
-            <Card key={item.id} className={classes.root} variant="outlined">
+            <Card key={item._id} className={classes.root} variant="outlined">
                 <CardContent>
                     <Typography variant="h5" component="h2">{item.title}</Typography>
                     <Typography color="textSecondary">{item.description}</Typography>
@@ -21,7 +21,7 @@ const Items = () => {
                 </CardContent>
                 <CardActions>
                     <Button size="small" onClick={() => addToCart(item)}><AddShoppingCart color="primary" /></Button>
-                    <Button size="small" onClick={() => deleteFromCart(item.id)}><RemoveShoppingCart color="secondary" /></Button>
+                    <Button size="small" onClick={() => deleteFromCart(item._id)}><RemoveShoppingCart color="secondary" /></Button>
                 </CardActions>   
             </Card>
         )

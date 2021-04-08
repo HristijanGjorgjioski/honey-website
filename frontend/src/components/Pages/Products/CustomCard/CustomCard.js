@@ -4,8 +4,8 @@ import { RemoveShoppingCart, AddShoppingCart } from '@material-ui/icons';
 
 import { MainContext } from '../../../../context/context';
 
-const CustomCard = ({ photo, price, title, description, weight, id, quantity }) => {
-    const product = { photo, price, title, description, weight, id, quantity };
+const CustomCard = ({ photo, price, title, description, weight, _id, quantity }) => {
+    const product = { photo, price, title, description, weight, _id, quantity };
     const { addToCart, cart } = useContext(MainContext);
 
     return (

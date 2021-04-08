@@ -15,7 +15,7 @@ export const Provider = ({ children }) => {
     const totalPrice = cart.reduce((acc, curr) => acc + curr.price*curr.quantity, 0);
 
     const addToCart = (item) => {
-        const index = cart.findIndex(p => p.id === item.id);
+        const index = cart.findIndex(p => p._id === item._id);
 
         if(index === -1) {
             cart.push({ ...item, quantity: 1 });
@@ -30,8 +30,8 @@ export const Provider = ({ children }) => {
         };
     };
 
-    const deleteFromCart = (id) => {
-        const index = cart.findIndex(p => p.id === id);
+    const deleteFromCart = (_id) => {
+        const index = cart.findIndex(p => p._id === _id);
 
         cart[index].quantity -= 1;
         const filteredCart = cart.filter((p) => p.quantity !== 0);
