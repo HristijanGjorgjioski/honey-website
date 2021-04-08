@@ -22,3 +22,10 @@ export const postOrder = async (req, res) => {
         console.log(error);
     }
 };
+
+export const deleteOrder = async (req, res) => {
+    const { _id } = req.params;
+
+    await Order.deleteOne({ _id });
+    res.redirect('/all-orders');
+}

@@ -21,7 +21,9 @@
                     <br />
                 </ul>
                 <div class="card-body">
-                  <a href="#" class="card-link">Избриши</a>
+                    <form action="/all-orders/delete" method="POST">
+                        <a href="/all-orders/<%= order._id %>" class="card-link">Избриши</a>
+                    </form>
                 </div>
             </div>
         <% } %>
