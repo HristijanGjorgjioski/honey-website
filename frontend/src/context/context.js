@@ -8,6 +8,7 @@ export const MainContext = createContext(inititalState);
 
 export const Provider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    const [products, setProducts] = useState([]);
 
     const cartLength = cart.reduce((acc, curr) => acc + curr.quantity, 0);
 
@@ -43,6 +44,11 @@ export const Provider = ({ children }) => {
         await api.submitOrder(order);
     }
 
+    const getProducts = async () => {
+        const { data } = await api.getProducts();
+        setProducts(data);
+    }
+
     return (
         <MainContext.Provider value={{
             addToCart,
@@ -51,7 +57,9 @@ export const Provider = ({ children }) => {
             totalPrice,
             cart,
             setCart,
-            submitOrder
+            submitOrder,
+            getProducts,
+            products
         }}>
             {children}
         </MainContext.Provider>
