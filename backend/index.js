@@ -38,22 +38,22 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  if(!req.session.admin) {
-    return next();
-  }
-  Admin.findById(req.session.admin._id)
-    .then(admin => {
-      if(!admin) {
-        return next();
-      }
-      req.admin = admin;
-      next();
-    })
-    .catch(err => {
-      console.log(err);
-    })
-})
+// app.use((req, res, next) => {
+//   if(!req.session.admin) {
+//     return next();
+//   }
+//   Admin.findById(req.session.admin._id)
+//     .then(admin => {
+//       if(!admin) {
+//         return next();
+//       }
+//       req.admin = admin;
+//       next();
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     })
+// })
 
 app.use(orderRoutes);
 app.use(productRoutes);
