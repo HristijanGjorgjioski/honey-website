@@ -1,12 +1,9 @@
-import mongoose from 'mongoose';
+import express from 'express';
 
-const contactSchema = mongoose.Schema({
-    name: String,
-    number: String,
-    email: String,
-    message: String,
-});
+import { postContact } from '../controllers/contact-controller.js';
 
-let Contact = mongoose.model('Contact', contactSchema);
+const router = express.Router();
 
-export default Contact;
+router.post('/contact', postContact);
+
+export default router;
