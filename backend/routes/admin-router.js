@@ -4,7 +4,7 @@ import { getAdmin, postAdmin } from '../controllers/admin-controller.js';
 
 const router = express.Router();
 
-router.get('/admin', getAdmin);
-router.post('/admin', postAdmin);
+router.get('/login', getAdmin);
+router.post('/login', postAdmin);
 
 export default router;
