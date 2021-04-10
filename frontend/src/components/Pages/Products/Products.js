@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { Container, Grid, Typography, CircularProgress } from '@material-ui/core'
+import { Container, Grid, Typography } from '@material-ui/core'
 
 import useStyles from './styles';
 import CustomCard from './CustomCard/CustomCard';

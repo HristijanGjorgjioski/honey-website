@@ -16,6 +16,7 @@ const Form = () => {
 
         submitContact(contact);
         history.push('/');
+        alert("Пораката е испратена. Ви благодариме!")
     }
 
     return (

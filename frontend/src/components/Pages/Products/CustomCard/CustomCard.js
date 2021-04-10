@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { Typography, Button, Card, CardMedia, CardContent, CardActions, CardActionArea } from '@material-ui/core'
-import { RemoveShoppingCart, AddShoppingCart } from '@material-ui/icons';
+import { AddShoppingCart } from '@material-ui/icons';
 
 import { MainContext } from '../../../../context/context';
 
 const CustomCard = ({ photo, price, title, description, weight, _id, quantity }) => {
     const product = { photo, price, title, description, weight, _id, quantity };
-    const { addToCart, cart } = useContext(MainContext);
+    const { addToCart } = useContext(MainContext);
 
     return (
         <Card>
@@ -21,7 +21,6 @@ const CustomCard = ({ photo, price, title, description, weight, _id, quantity })
             </CardActionArea>
             <CardActions>
                 <Button size="small" onClick={() => addToCart(product)}><AddShoppingCart color="primary" /></Button>
-                {/* <Button size="small" onClick={() => deleteFromCart(id)}><RemoveShoppingCart color="secondary" /></Button> */}
             </CardActions>
         </Card>
     )

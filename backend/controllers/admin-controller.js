@@ -3,7 +3,6 @@ import bcrypt from 'bcryptjs';
 import Admin from '../models/admin-model.js';
 
 export const getAdmin = async (req, res) => {
-    console.log(req.session);
     res.render('admin');
 }
 

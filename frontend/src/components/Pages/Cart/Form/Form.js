@@ -17,6 +17,7 @@ const Form = () => {
         submitOrder(order);
         setCart([]);
         history.push('/');
+        alert("Порачката е успешна. Ви благодариме!");
     }
 
     return (
