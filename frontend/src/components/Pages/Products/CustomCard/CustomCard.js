@@ -11,7 +11,7 @@ const CustomCard = ({ photo, price, title, description, weight, _id, quantity })
     return (
         <Card>
             <CardActionArea>
-                <CardMedia component="img" image={photo} title="Продукт" />
+                <CardMedia component="img" image={photo} title="Продукт" style={{ height: '220px' }} />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">{title}</Typography>
                     <Typography variant="body1" color="textSecondary" component="p">{description}</Typography>

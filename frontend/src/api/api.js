@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000' });
+const API = axios.create({ baseURL: 'https://honey-website-backend.herokuapp.com' });
 
 
 export const getProducts = () => API.get('/get-products');
