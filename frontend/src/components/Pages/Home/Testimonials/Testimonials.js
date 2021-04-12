@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from 'react-material-ui-carousel'
-import { Container, Paper, Typography, CardMedia, Grid, Fade } from '@material-ui/core';
+import { Container, Paper, Typography, Fade } from '@material-ui/core';
 
 import useStyles from './styles';
 import testimonialsData from './testimonialsData';
+import Item from './Item/Item';
 
 const Testimonials = () => {
     const classes = useStyles();
@@ -25,23 +26,7 @@ const Testimonials = () => {
         }
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
-    }, [window.pageYOffset])
-
-    const Item = ({ item }) => {
-        return (
-            <Paper elevation={4} className={classes.paper}>
-                <Grid container>
-                    <Grid className={classes.grid1} item xs={12} sm={12}>
-                        <CardMedia style={{ width: '200px', height: '200px' }} component="img" image={item.image} />
-                        <Typography>{item.name}</Typography>
-                    </Grid>
-                    <Grid className={classes.grid1} item xs={12} sm={12}>
-                        <Typography>{item.description}</Typography>
-                    </Grid>
-                </Grid>
-            </Paper>
-        )
-    }
+    }, [window.pageYOffset]);
 
     return (
         <Fade in={show} timeout={{ enter: 2000 }}>
@@ -49,7 +34,7 @@ const Testimonials = () => {
                 <Container className={classes.container}>
                     <Typography className={classes.title}>Дел од нашите клиенти</Typography>
                     <Carousel className={classes.carousel}>
-                        {testimonialsData.map( (data, index) => <Item key={index} item={data} /> )}
+                        {testimonialsData.map((data, index) => <Item key={index} item={data} /> )}
                     </Carousel>
                 </Container>
             </Paper>
