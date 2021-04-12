@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Carousel from 'react-material-ui-carousel'
+import Carousel from 'react-material-ui-carousel';
 import { Container, Paper, Typography, Fade } from '@material-ui/core';
 
 import useStyles from './styles';
@@ -39,7 +39,7 @@ const Testimonials = () => {
                 </Container>
             </Paper>
         </Fade>
-    )
-}
+    );
+};
 
-export default Testimonials
+export default Testimonials;

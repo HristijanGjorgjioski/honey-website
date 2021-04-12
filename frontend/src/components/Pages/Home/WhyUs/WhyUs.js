@@ -3,24 +3,11 @@ import { CardMedia, Container, Grid, Typography, Fade, Paper } from '@material-u
 import { CheckCircleOutlineTwoTone } from '@material-ui/icons';
 
 import useStyles from './styles';
+import whyUsData from './whyUsData';
+import Item from './Item/Item';
 
 const WhyUs = () => {
     const classes = useStyles();
-
-    const argumentsArray = [
-        {
-            title: 'title1',
-            subtitle: 'subtitle1'
-        },
-        {
-            title: 'title2',
-            subtitle: 'subtitle2'
-        },
-        {
-            title: 'title3',
-            subtitle: 'subtitle3'
-        }
-    ];
 
     const [show, setShow] = useState(false);
     let whyUsPosition = 1200;
@@ -34,29 +21,18 @@ const WhyUs = () => {
             if(currentPosition > whyUsPosition) {
                 setShow(true);
             } else {
-                setShow(false)
+                setShow(false);
             }
         }
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
-    }, [window.pageYOffset])
+    }, [window.pageYOffset]);
 
-    const facts = argumentsArray.map((argument, index) => {
-        const container = {};
-
-        container[argument.title] = argument.title;
-        container.subtitle = argument.subtitle;
-
+    const facts = whyUsData.map((argument, index) => {
         return (
-            <Container key={index} style={{ display: 'flex', marginTop: '10%' }}>
-                <CheckCircleOutlineTwoTone fontSize="large" style={{ color: 'green' }} />
-                <Container style={{ display: 'block' }}>
-                    <Typography variant="body1">{argument.title}</Typography>
-                    <Typography variant="body2">{argument.subtitle}</Typography>
-                </Container>
-            </Container>
-        )
-    })
+            <Item argument={argument} index={index} />
+        );
+    });
 
     return (
         <Fade in={show} timeout={{ enter: 2000 }}>
@@ -74,7 +50,7 @@ const WhyUs = () => {
                 </Container>
             </Paper>
         </Fade>
-    )
-}
+    );
+};
 
-export default WhyUs
+export default WhyUs;

@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { Typography, Button, Card, CardMedia, CardContent, CardActions, CardActionArea } from '@material-ui/core'
+import React, { useContext } from 'react';
+import { Typography, Button, Card, CardMedia, CardContent, CardActions, CardActionArea } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
 
 import { MainContext } from '../../../../context/context';
@@ -23,7 +23,7 @@ const CustomCard = ({ photo, price, title, description, weight, _id, quantity })
                 <Button size="small" onClick={() => addToCart(product)}><AddShoppingCart color="primary" /></Button>
             </CardActions>
         </Card>
-    )
-}
+    );
+};
 
 export default CustomCard;

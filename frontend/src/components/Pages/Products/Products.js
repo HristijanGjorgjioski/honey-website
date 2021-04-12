@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react'
-import { Container, Grid, Typography } from '@material-ui/core'
+import React, { useContext, useEffect } from 'react';
+import { Container, Grid, Typography } from '@material-ui/core';
 
 import useStyles from './styles';
 import CustomCard from './CustomCard/CustomCard';
@@ -11,7 +11,7 @@ const Products = () => {
 
     useEffect(() => {
         getProducts();
-    }, [])
+    }, []);
     
     return (
         <Container className={classes.container}>
@@ -24,7 +24,7 @@ const Products = () => {
                     }) : "Нема производи"}
                 </Grid>
         </Container>
-    )
-}
+    );
+};
 
 export default Products;
