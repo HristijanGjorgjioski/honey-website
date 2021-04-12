@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { Card, CardContent, Typography, CardActions, Button } from '@material-ui/core';
 import { RemoveShoppingCart, AddShoppingCart } from '@material-ui/icons';
 
@@ -24,8 +24,8 @@ const Items = () => {
                     <Button size="small" onClick={() => deleteFromCart(item._id)}><RemoveShoppingCart color="secondary" /></Button>
                 </CardActions>   
             </Card>
-        )
-    })
+        );
+    });
     
     return (
         <>
@@ -34,6 +34,6 @@ const Items = () => {
     );
 };
 
-export default Items
+export default Items;
 
   

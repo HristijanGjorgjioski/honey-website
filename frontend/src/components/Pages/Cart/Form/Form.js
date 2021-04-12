@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import { TextField, Button, Container, FormHelperText } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 
@@ -18,7 +18,7 @@ const Form = () => {
         setCart([]);
         history.push('/');
         alert("Порачката е успешна. Ви благодариме!");
-    }
+    };
 
     return (
         <Container className={classes.container}>
@@ -30,7 +30,7 @@ const Form = () => {
                 <FormHelperText>Откако ќе порачате нашиот тим ќе ве исконтактира во најбрз можен рок. Ви благодариме!</FormHelperText>
             </form>
         </Container>
-    )
-}
+    );
+};
 
-export default Form
+export default Form;

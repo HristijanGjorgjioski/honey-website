@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { Container, Divider, Typography } from '@material-ui/core'
+import React, { useContext } from 'react';
+import { Container, Divider, Typography } from '@material-ui/core';
 
 import useStyles from './styles';
 import Items from './Items/Items';
@@ -23,7 +23,7 @@ const Cart = () => {
                 </>
             }
         </Container>
-    )
-}
+    );
+};
 
 export default Cart;

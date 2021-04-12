@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Grid, Typography } from '@material-ui/core';
 
@@ -24,7 +24,7 @@ const Footer = () => {
                 </Grid>
             </Grid>
         </Container>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

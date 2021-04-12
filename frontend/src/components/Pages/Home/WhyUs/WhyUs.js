@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { CardMedia, Container, Grid, Typography, Fade, Paper } from '@material-ui/core'
-import { CheckCircleOutlineTwoTone } from '@material-ui/icons';
 
 import useStyles from './styles';
 import whyUsData from './whyUsData';
@@ -10,7 +9,8 @@ const WhyUs = () => {
     const classes = useStyles();
 
     const [show, setShow] = useState(false);
-    let whyUsPosition = 1200;
+    let whyUsPosition = 1200; // desktop
+    // whyUsPosition = 2800; // mobile
 
     useEffect(() => {
         function onScroll() {

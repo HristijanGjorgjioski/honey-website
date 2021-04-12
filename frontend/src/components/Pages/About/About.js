@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container, Typography } from '@material-ui/core'
+import React from 'react';
+import { Container, Typography } from '@material-ui/core';
 
 import useStyles from './styles';
 
@@ -16,7 +16,7 @@ const About = () => {
                 Vivamus nec molestie turpis. Suspendisse potenti. Donec posuere elementum porta. Mauris rutrum id tortor in volutpat. Sed faucibus interdum tellus, sed rhoncus nibh molestie tristique. Aenean tincidunt posuere mi, tempus sodales lectus pretium sit amet. Praesent ligula lorem, cursus a fringilla at, tristique a dolor. Etiam mollis est quis imperdiet condimentum. Aliquam eu velit felis. Vivamus a gravida ipsum, vitae vulputate arcu.
             </Typography>
         </Container>
-    )
-}
+    );
+};
 
-export default About
+export default About;

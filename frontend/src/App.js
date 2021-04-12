@@ -1,11 +1,11 @@
-import React from 'react'
-import { Box } from '@material-ui/core'
+import React from 'react';
+import { Box } from '@material-ui/core';
 import EjectIcon from '@material-ui/icons/Eject';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ScrollToTop from 'react-scroll-up';
 
-import Home from './components/Pages/Home/Home'
-import Navbar from './components/Navbar/Navbar'
+import Home from './components/Pages/Home/Home';
+import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import About from './components/Pages/About/About';
 import Contact from './components/Pages/Contact/Contact';
@@ -33,7 +33,7 @@ const App = () => {
                 </Box>
             </BrowserRouter>
         </Provider>
-    )
-}
+    );
+};
 
-export default App
+export default App;

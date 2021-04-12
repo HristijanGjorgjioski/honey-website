@@ -22,7 +22,7 @@ const Navbar = () => {
                 <MenuItem><Link to="/cart" style={{ textDecoration: 'none' }}><ShoppingCart style={{ color: '#28334AFF' }} />{cartLength}</Link></MenuItem>
             </Toolbar>
         </AppBar>
-    )
-}
+    );
+};
 
 export default Navbar;

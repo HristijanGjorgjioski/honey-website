@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Container, Typography } from '@material-ui/core';
 
 import useStyles from './styles';
@@ -13,7 +13,7 @@ const Infos = () => {
             <Typography>Тел. Број</Typography>
             <Typography>Е-маил:</Typography>
         </Container>
-    )
-}
+    );
+};
 
 export default Infos;

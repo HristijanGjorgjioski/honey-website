@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import { Typography, TextField, Button, Container } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 
@@ -13,7 +13,6 @@ const Form = () => {
 
     const onFormSubmit = async (e) => {
         e.preventDefault();
-
         submitContact(contact);
         history.push('/');
         alert("Пораката е испратена. Ви благодариме!")
@@ -30,7 +29,7 @@ const Form = () => {
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Испрати</Button>
             </form>
         </Container>
-    )
-}
+    );
+};
 
-export default Form
+export default Form;

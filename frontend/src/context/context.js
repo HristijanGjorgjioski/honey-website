@@ -42,7 +42,7 @@ export const Provider = ({ children }) => {
 
     const submitContact = async (contact) => {
         await api.submitContact(contact);
-    }
+    };
 
     const getProducts = async () => {
         const { data } = await api.getProducts();
@@ -64,7 +64,7 @@ export const Provider = ({ children }) => {
             getProducts,
             products,
             totalPrice,
-            submitContact
+            submitContact,
         }}>
             {children}
         </MainContext.Provider>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid } from '@material-ui/core'
+import { Container, Grid } from '@material-ui/core';
 
 import useStyles from './styles';
 import Form from './Form/Form';
@@ -19,7 +19,7 @@ const Contact = () => {
                 </Grid>
             </Grid>
         </Container>
-    )
-}
+    );
+};
 
-export default Contact
+export default Contact;
