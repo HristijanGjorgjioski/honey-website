@@ -7,7 +7,7 @@ import galleryArray from './galleryData';
 const Gallery = () => {
     const classes = useStyles();
     const [show, setShow] = useState(false);
-    const galleryPosition = 200;
+    const galleryPosition = 200; // desktop & mobile
 
     useEffect(() => {
         function onScroll() {
